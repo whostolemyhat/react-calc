@@ -78,7 +78,7 @@ module.exports = function(grunt) {
                 banner: '<%= tag.banner %>'
             },
             dist: {
-                src: ['<%= app %>/js/*.js'], // not vendor files
+                src: ['<%= app %>/build/js/app.min.js'],
                 dest: '<%= app %>/build/js/app.min.js'
             }
         },
@@ -106,10 +106,34 @@ module.exports = function(grunt) {
                     base: ['<%= app %>']
                 }
             }
+        },
+
+        react: {
+            jsx: {
+                files: {
+                    '<%= app %>/build/js/app.min.js' : '<%= app %>/js/calculator.jsx'
+                }
+            }
+        },
+
+        copy: {
+            build: {
+                files: {
+                    '<%= app %>/build/js/vendor/react.min.js' : '<%= app %>/js/vendor/react.min.js'
+                }
+            }
+        },
+
+        processhtml: {
+            build: {
+                files: {
+                    '<%= app %>/build/index.html' : '<%= app %>/index.html'
+                }
+            }
         }
 
     });
 
     grunt.registerTask('default', ['sass:dev', 'connect:livereload', 'watch']);
-    grunt.registerTask('build', ['jshint', 'clean', 'sass:prod']);
+    grunt.registerTask('build', ['jshint', 'clean', 'sass:prod', 'react', 'uglify', 'copy', 'processhtml']);
 };
