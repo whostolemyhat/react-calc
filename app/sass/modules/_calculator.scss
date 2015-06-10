@@ -1,0 +1,56 @@
+$green: #7adbc3;
+$yellow: #f7f499;
+
+.calculator {
+    @extend .clearfix;
+    margin: 100px auto;
+    max-width: 400px;
+    background: lighten($yellow, 10);
+    padding: 16px;
+
+    &__output,
+    &__runningTotal {
+        display: block;
+        font-size: 20px;
+        background: $yellow;
+        text-align: right;
+        padding: 4px;
+    }
+    
+    &__input {
+        margin-top: 16px;
+        width: 100%;
+        margin-bottom: 16px;
+        @media only screen and (min-width: 500px) {
+            width: 80%;
+        }
+    }
+
+    &__output {
+        font-size: 30px;
+    }
+
+    button,
+    .button {
+        background: $green;
+        border: 1px solid darken($green, 10);
+        border-radius: 2px;
+        color: white;
+    }
+
+    button {
+        width: 50px;
+        margin: 0 1%;
+    }
+
+    .button {
+       height: 30px;
+       line-height: 30px;
+       display: inline-block;
+       padding: 4px 8px;
+       background: #f78e43;
+       border: 1px solid darken(#f78e43, 10);
+       cursor: pointer;
+       float: right;
+    }
+}
