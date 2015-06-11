@@ -13,3 +13,6 @@ otherwise assets will not load correctly.
 
 ##Build
 - Run 'grunt build' to create a production version. A new build will be created in /app/build/
+
+##Tests
+- Tests are under /spec and can be run via Jasmine. Currently only stubs.
