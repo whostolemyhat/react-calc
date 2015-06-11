@@ -45,7 +45,7 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    style: 'expanded',
+                    outputStyle: 'expanded',
                     lineNumbers: true
                 },
                 files: {
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             },
             prod: {
                 options: {
-                    style: 'compressed',
+                    outputStyle: 'compressed',
                     lineNumbers: false
                 },
                 files: {
