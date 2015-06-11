@@ -1,15 +1,22 @@
+/**
+ * @jsx React.DOM
+ */
 var assert = require('assert');
 var React = require('react/addons');
 var TestUtils = React.addons.TestUtils;
 
-var Calculator = require('../app/js/calculator');
+var Calculator = require('../app/build/js/app.min');
 
 
 describe('Calculator', function() {
+
     describe('layout', function() {
 
+        var calc = TestUtils.renderIntoDocument(
+            <Calculator />
+        );
+
         // visuals
-        it('has a plus button');
         it('has an equals button');
         it('has a clear button');
         it('has an input');

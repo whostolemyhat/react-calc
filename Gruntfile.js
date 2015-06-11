@@ -111,7 +111,8 @@ module.exports = function(grunt) {
         react: {
             jsx: {
                 files: {
-                    '<%= app %>/build/js/app.min.js' : '<%= app %>/js/calculator.js'
+                    '<%= app %>/build/js/app.min.js' : '<%= app %>/js/calculator.js',
+                    'spec/calculator.spec.js' : 'spec/calculator.jsx'
                 }
             }
         },
